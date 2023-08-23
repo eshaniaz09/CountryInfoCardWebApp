@@ -2,7 +2,7 @@
 
 This web application fetches and displays information about a specific country using the [REST Countries API](https://restcountries.com/). The fetched data is presented in a visually appealing card format.
 
-![Country Information Card](screenshot.png)
+
 
 ## Features
 
