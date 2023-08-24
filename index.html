@@ -3,110 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-           body {
-    background-color: rgb(7, 6, 6);
-    color: rgb(38, 35, 35);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
+    <link rel="stylesheet" href="style.css">
 
-#card {
-    background-color: rgba(255, 255, 255, 0.437);
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    max-width: 400px;
-    text-align: center;
-}
-
-.card-body-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.card-body-title {
-    margin: 10px 0;
-    font-size: 24px;
-}
-
-.card-body-text {
-    margin: 10px 0;
-}
-
-.card-footer {
-    margin-top: 20px;
-}
-
-.card-footer-social {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.card-footer-social h3 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.card-footer-social p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-    </style>
 </head>
 <body>
     <div class="container">
 
     </div>
-    <script>
-
-        // to request for the information of country Pakistan
-        const container = document.querySelector('.container');
-        const request = new XMLHttpRequest();
-        request.open('GET' , 'https://restcountries.com/v3.1/name/pakistan')
-        request.send();
-
-        // / to get the response from the api
-        request.addEventListener('load' , function(){
-                const [data] = JSON.parse(this.responseText);
-                console.log(data);
-                // to access the properties of the dymonym and nativelanguage
-                const demonym = data.demonyms?.eng?.f || 'N/A';
-                const nativeLanguage = data.languages?.urd || 'N/A';
-                const htmlData = `
-
-                <div id="card">
-            <article class="card">
-                <div class="card-body">
-                    <img src="${data.flags.png}" alt="" class="card-body-img" />
-                    <h1 class="card-body-tittle">
-                        ${data.name.common}<span></span>
-                    </h1>
-                    <p class="card-body-text"> capital : ${data.capital}</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-footer-social">
-                        <h3>${nativeLanguage}</h3>
-                        <p>Native language</p>
-                    </div>
-                    <div class="card-footer-social">
-                        <h3>${data.population}</h3>
-                        <p>Population</p>
-                    </div>
-                    <div class="card-footer-social">
-                        <h3>${demonym}</h3>
-                        <p>Demonym</p>
-                    </div>
-                </div>
-            </article>
-           </div>
-                `
-                container.insertAdjacentHTML('afterbegin', htmlData);
-        })
-    
-    </script>
+    <script src="script.js"> </script>
 </body>
 </html>
